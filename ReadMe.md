@@ -7,7 +7,7 @@ Built with Javascript, HTML, CSS, Node.js with Express, and PostgreSQL.
 ![langingpage](./assets/signup.png)
 ![userfeed](./assets/userfeed.png)
 ![profile](./assets/userprofile.png)
-![lurking](./assets/lurking.png)
+![lurking](./assets/lurkingpage.png)
 
 ## Features
 
