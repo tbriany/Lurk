@@ -1,122 +1,68 @@
-# Pursuit-Core-Web-Express-Group-Project
+# Lurk
 
-With your group, build an app that has the basic functionality of a social media website.
+Carry is a delivery service that allows users to place orders with some of their favorite retail stores that are within the NYC boroughs. Designed with the idea that customers should be able to get any items they need, we focus on delivering their necessities / wants from retail stores in delivery times ranging from 3hrs to end-of-day.
 
-## Groupwork
+Built with React.js, Node.js with Express, PostgreSQL, and Material UI.
 
-This is our first large group project.  There are three large things to be aware of for group projects:
+![langingpage](./assets/signup.png)
+![userfeed](./assets/userfeed.png)
+![profile](./assets/userprofile.png)
+![lurking](./assets/lurking.png)
 
-1. Git
-2. Trello
-3. Group Roles
+## Features
 
-### Git
+Users are able to:
 
-Unlike homework in the past where you forked a Pursuit repo, then committed and pushed at the end, a group project must be more collaborative.
-
-The master branch should be the most current version of the project.  Whenever you want to make a change to the project, you should create a new branch named after the change you will be making.  Make your changes in the branch, then make a PR against master.  Someone else from your team should review the PR, then merge it into the master branch.  Everyone else should then pull the master branch to have the most current version on their local machines.
-
-
-### Trello
-
-Each group member should have an account on [Trello](https://trello.com/) and the group should have a well maintained list of who is working on what task.  Without this, two people might try to edit the same file and create merge conflicts.
-
-[Example](https://trello.com/b/DnZvFigA/agile-board)
+* Sign up for an account.
+* Create posts. 
+* Like/dislike/comment on other users posts. 
+* Follow "lurk" or unfollow "unlurk" other users.
 
 
-### Group Roles
 
-The expectation is that everyone in a group is chiefly occupied with writing code.  In addition to that, the following roles are important for someone to have explicit ownership of:
+## Technologies Used
 
-|       Role        |                                                                                        Responsibilities                                                                                         |
-| :---------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|  Technical Lead   | In charge of maintaining the health of master branch and ensure that master is always safe to pull from.  Makes final decisions on project architecture in conversation with other team members |
-|  Project Manager  |                                                         Is responsible for the health of the Trello or board.  Organizes daily standups                                                         |
-|       UI/UX       |                                                                        Is responsible for the design and flow of the app                                                                        |
-| PR Review Process |                                     Is responsible for ensuring that PRs into master are reviewed, and that all team members are reviewing each other's PRs                                     |
+* HTML5. For the front-end/client interface of our app.
+* CSS3. For the styling of our app.
+* Node.js & Express.js. For the HTTP backend server.
+* PostgreSQL. As our relation database management system.
 
 
-## Back-End
-
-Create a full RESTful API using the social media database structure described below, including an Express app and a Postgres database. This app should have the following routes, with corresponding SQL statements:
-
-- **Users**
-  - GET `/users` - Get all users.
-  - GET `/users/:id` - Get single user.
-  - POST `/users` - Add single user.
-  - DELETE `/users/:id` - Delete user with the corresponding `id`.
-
-- **Posts**
-  - GET `/posts` - Get all posts.
-  - GET `/posts/:id` - Get single post.
-  - POST `/posts` - Add single post.
-  - PATCH `/posts/:id` - Edit single post.
-  - DELETE `/posts/:id` - Delete single post.
-
-- **Likes**
-  - GET `/likes/posts/:post_id` - Get all likes for a single post.
-  - POST `/likes/posts/:post_id` - Add single like.
-  - DELETE `/likes/:post_id/:liker_id` - Delete single like.
-
-- **Comments**
-  - GET `/comments/posts/:post_id` - Get all comments for a single post.
-  - POST `/comments/posts/:post_id/:commenter_id` - Add single comment.
-  - PATCH `/comments/:post_id/:commenter_id` - Edit single comment.
-  - DELETE `/comments/:post_id/:commenter_id` - Delete single comment.
-
-- **Albums**
-  - GET `/albums/:owner_id` - Get all albums that belong to a user.
-  - POST `/albums/:owner_id` - Create new empty album for user.
-
-- **Pictures**
-  - GET `/pictures/albums/:album_id` - Get all pictures for a single album.
-  - POST `/pictures/albums/:album_id` - Add single picture to album.
-  - DELETE `/pictures/:pic_id` - Delete single picture.
-
-The responses from your Express app should have three keys: `status`, `message`, and `body`. For example, when I send a GET request for a single user, I should get back something that looks like this:
-
-```js
-{
-  status: "success",
-  message: "got single user",
-  body: {
-    id: 1,
-    name: "Reed",
-    age: 46
-  }
-}
-```
+## Technical milestones 
+* Displaying all posts from all users in chronological order
+* Including the number of likes in each post as well as the user
+* Displaying all comments from each post
+* Searching for a user
 
 
-## Front end
+##  Local Setup
 
-Your front end should have each of the following components.  Don't worry about authentication yet: anyone can make whatever REST calls they want to.
+You must have installed Node.js, PostgreSQL and Nodemon in your computer.
 
-### Table of contents
+You can check for these dependencies with node -v and psql -v. If your shell/terminal doesn't complain and you see version numbers you are good to go.
 
-Have a table of contents page that contains hyperlinks to all of the other pages
+1. Clone this repo: 
+  
+   git clone https://github.com/tbriany/Lurk.git
 
-### Posts Feed
+2. Install dependencies for the Node/Express Server (backend folder):
 
-- Display all posts from all users in chronological order
-- Include the number of likes in each post as well as the user
-- Display all comments from each post
-- Create a new post
-- Create a new comment for a given post
+   cd server && npm install
 
-### User Search
+3. Install dependencies in the frontend folder:
 
-- Search for a user
-- Create a new user
-- Delete a user
+   cd client && npm install
 
-### Albums
+4. Create database and seed sample data while being in the server directory with:
+ 
+   psql -f ./server/seed.sql
+   Make sure PostgreSQL is running!
 
-- See all existing albums
-- Create a new album
-
-### Photos
-
-- See all photos 
-- Create a single photo
-- Delete a single photo
+5. To launch the Node/Express server, inside the backend folder run:
+ 
+   nodemon server.js
+ 
+6. To launch the HTML, inside the frontend folder, and preferably in another terminal window run:
+ 
+   open the HTML file in a browser 
+ 
