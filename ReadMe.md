@@ -1,8 +1,8 @@
 # Lurk
 
-Carry is a delivery service that allows users to place orders with some of their favorite retail stores that are within the NYC boroughs. Designed with the idea that customers should be able to get any items they need, we focus on delivering their necessities / wants from retail stores in delivery times ranging from 3hrs to end-of-day.
+A social media app created using HTML, Javascript, and CSS. Users can create an account, 'lurk' (follow) other users, create posts, view all users posts, and create photo albums and upload photos.
 
-Built with React.js, Node.js with Express, PostgreSQL, and Material UI.
+Built with Javascript, HTML, CSS, Node.js with Express, and PostgreSQL.
 
 ![langingpage](./assets/signup.png)
 ![userfeed](./assets/userfeed.png)
